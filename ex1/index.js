@@ -20,3 +20,10 @@ client.once(Events.ClientReady, c => {
 
 // Log in to Discord with your client's token
 client.login(token);
+
+client.on('messageCreate', msg => {
+	// You can view the msg object here with console.log(msg)
+	if (msg.content === 'Hello') {
+	   msg.reply(`Hello ${msg.author.username}`);
+	}
+});
